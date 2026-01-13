@@ -1,5 +1,5 @@
 # ======================================================
-#  SaaS-App .gitignore (Production-Grade)
+#  work-assistant .gitignore (Production-Grade)
 # ======================================================
 
 # --- Node.js dependencies ---
@@ -89,8 +89,6 @@ $RECYCLE.BIN/
 site/
 gh-pages/
 !/.github/badges/
-codex-local/
-codex-build/
 
 # --- Temporary project artifacts ---
 scripts/tmp/

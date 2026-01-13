@@ -1,58 +1,41 @@
-👥 CODEOWNERS
-SaaS-App Project
+# CODEOWNERS
+# This file defines default reviewers for pull requests.
+# Paths are matched from top to bottom; the last matching rule wins.
 
-Automatically assigns reviewers for PRs and enforces approval workflow.
+# -------------------------------------------------------------------
+# Global ownership
+# -------------------------------------------------------------------
 
-🧩 Global Ownership
-# Default owner for everything
-*       @garybayes
+* @garybayes
 
+# -------------------------------------------------------------------
+# Backend & API
+# -------------------------------------------------------------------
 
-This line means you (Gary G. Bayes) are automatically requested for every pull request in the repository.
+/prisma/           @garybayes
+/src/app/api/      @garybayes
 
-🧱 Core Application Areas
-# Backend and database
-/prisma/         @garybayes @codex-ai
-/src/app/api/    @garybayes @codex-ai
+# -------------------------------------------------------------------
+# Frontend & Tests
+# -------------------------------------------------------------------
 
-# Frontend and tests
-/src/components/ @garybayes @jules-dev
-/src/tests/      @garybayes @jules-dev @codex-ai
+/src/components/   @garybayes @jules-dev
+/src/tests/        @garybayes @jules-dev
 
-# Configuration and scripts
-/scripts/        @garybayes
+# -------------------------------------------------------------------
+# Configuration & Tooling
+# -------------------------------------------------------------------
+
+/scripts/          @garybayes
 /playwright.config.ts @garybayes
-/package.json    @garybayes
+/package.json     @garybayes
+/tsconfig.json    @garybayes
 
-📘 Documentation and Specs
-/doc/            @garybayes
-/CONTRIBUTING.md @garybayes
-/.github/        @garybayes
+# -------------------------------------------------------------------
+# GitHub & Documentation
+# -------------------------------------------------------------------
 
-🏷️ Branch and Tag Control
-# Require your approval before merges into main
-/main/           @garybayes
-
-🧠 Notes
-
-Codex (@codex-ai) should be added to your repo collaborators list if not already.
-
-Jules (@jules-dev) should also be added as a collaborator or team member.
-
-GitHub will automatically request reviews from these accounts when files in their areas change.
-
-You can refine these ownerships later if, for example, Jules focuses exclusively on testing or UI.
-
-✅ Setup Verification
-
-After pushing this file:
-
-Commit and push:
-
-git add .github/CODEOWNERS
-git commit -m "Add CODEOWNERS for auto-review routing"
-git push origin main
-
-
-On GitHub → open any PR that touches /doc/ or /src/app/api/ →
-You should see Reviewers: garybayes auto-assigned.
+/.github/          @garybayes
+/docs/             @garybayes
+/README.md         @garybayes
+/CONTRIBUTING.md   @garybayes

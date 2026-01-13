@@ -1,37 +1,41 @@
-SaaS-App — Workflow Hub for Remote Professionals
+# Work Assistant — Workflow Hub for Remote Professionals
 
+## 🧭 Overview
 
+**Work Assistant** is a Next.js 13+ TypeScript platform that serves as a workflow hub for remote professionals.
+It brings together automation, integrations, and productivity tooling into a single, secure dashboard.
 
+The application is designed to be:
+- Modular
+- Automation-friendly
+- Safe for incremental adoption
+- Compatible with external GitHub Apps (e.g., Task Assistant)
 
+---
 
+## 🧰 Tech Stack
 
+| Layer | Technology | Purpose |
+|------|-----------|---------|
+| Frontend | React + Next.js 13+ | Modern, server-first UI |
+| Styling | Tailwind CSS v4 | Utility-first responsive design |
+| Backend | Next.js API Routes | Secure API layer |
+| Database | PostgreSQL + Prisma ORM | Typed schema, migrations, seeding |
+| Authentication | NextAuth.js | Credential + OAuth login |
+| Encryption | AES-256 (`crypto.ts`) | Protects user API keys |
+| Testing | Vitest + Playwright | Integration + E2E coverage |
+| CI/CD | GitHub Actions | Build, test, and quality checks |
 
+---
 
+## ⚙️ Local Setup
 
+### 1. Clone the Repository
 
-
-
-🧭 Overview
-
-SaaS-App is a Next.js 13+ TypeScript platform that serves as a Workflow Hub and Automation Engine for remote professionals.
-It integrates modern cloud tools into one intelligent dashboard, allowing users to connect apps, build workflows, and track productivity securely.
-
-🧰 Tech Stack
-Layer	Technology	Purpose
-Frontend	React + Next.js 13	Modern, server-first UI
-Styling	Tailwind CSS v4	Utility-first responsive design
-Backend	Next.js API Routes	Secure API layer
-Database	PostgreSQL + Prisma ORM	Typed schema, migrations, seeding
-Authentication	NextAuth.js	Credential + OAuth login
-Encryption	AES-256 via crypto.ts	Protects user API keys
-Testing	Vitest + Playwright	Integration + E2E coverage
-CI/CD	GitHub Actions	Build, test, and Codex validation
-⚙️ Setup Guide
-1. Clone the Repository
-git clone https://github.com/garybayes/saas-app.git
-cd saas-app
-
-2. Install Dependencies
+```bash
+git clone https://github.com/automated-assistant-systems/work-assistant.git
+cd work-assistant
+Install Dependencies
 npm install
 
 3. Configure Environment Variables
@@ -39,17 +43,16 @@ npm install
 Copy the example file and edit values as needed:
 
 cp .env.example .env
-nano .env
 
 
 Your .env should include:
 
-DATABASE_URL="postgresql://saasuser:password@localhost:5432/saas_app?schema=public"
-ENCRYPTION_KEY="your-32-character-base64-key"
+DATABASE_URL="postgresql://user:password@localhost:5432/work_assistant?schema=public"
 NEXTAUTH_SECRET="your-nextauth-secret"
 NEXTAUTH_URL="http://localhost:3000"
+ENCRYPTION_KEY="your-32-character-base64-key"
 
-4. Initialize Database
+4. Initialize the Database
 npx prisma migrate deploy
 npx prisma db seed
 
@@ -61,183 +64,55 @@ Visit: http://localhost:3000
 
 🧪 Testing
 Type	Command	Description
-Integration (Vitest)	npm run test	API + unit validation
-End-to-End (Playwright)	npm run test:e2e	Browser workflows
-Prisma Studio	npx prisma studio	Inspect database tables
+Integration	npm run test	API + unit validation
+End-to-End	npm run test:e2e	Browser workflows
+DB Inspection	npx prisma studio	View database tables
 
-Playwright tests require the app running locally on localhost:3000.
+Playwright tests require the app to be running locally on localhost:3000.
 
-🔄 CI/CD Pipeline Summary
+🔄 CI/CD
 
-The workflow at
+The primary workflow at:
+
 .github/workflows/ci-pipeline.yml
-automatically performs the following on push or pull request:
-
-Spins up PostgreSQL 16 service
-
-Installs dependencies (npm ci)
-
-Runs Prisma generate + migrate + seed
-
-Executes Vitest suite (npm run test)
-
-Starts app and runs Playwright E2E tests (npm run test:e2e)
-
-Uploads Playwright report on failure
-
-Codex Integration
-
-Codex monitors:
-
-sprint-* branches
-
-CI results from this workflow
-
-.env.example consistency
-
-When Codex completes a rebuild, it updates the Codex Validation badge above automatically.
-
-🧩 Project Structure
-saas-app/
-├── .env.example
-├── .github/
-│   ├── workflows/
-│   │   └── ci-pipeline.yml
-│   └── badges/
-│       └── codex-status.json
-├── prisma/
-│   ├── schema.prisma
-│   └── seed.ts
-├── src/
-│   ├── app/
-│   ├── lib/
-│   │   └── crypto.ts
-│   └── tests/
-│       ├── integration/
-│       │   ├── routeCoverage.test.ts
-│       │   ├── routeValidation.test.ts
-│       │   └── workflows.test.ts
-│       └── e2e/
-│           ├── auth.spec.ts
-│           ├── connections.spec.ts
-│           ├── theme.spec.ts
-│           ├── workflows.spec.ts
-│           └── sprint5-validation.spec.ts
-└── doc/
-    ├── Env_Variables_Setup_Guide.md
-    ├── Codex_CI_Integration_Guide.md
-    ├── Branch_Protection_Policy_Guide.md
-    └── WSL_Setup_for_Codex_Rebuild.md
-
-🧱 Example CI Status Badge Integration
-
-The Codex status badge uses a small JSON file that CI updates after each build.
-Create this file:
-
-.github/badges/codex-status.json
-
-{
-  "schemaVersion": 1,
-  "label": "codex-status",
-  "message": "pending",
-  "color": "lightgrey"
-}
 
 
-When Codex completes a validation run, it automatically changes message to "passing" or "failed".
+Performs the following on push or pull request:
 
-You can also update it manually for local test purposes:
+Installs dependencies
 
-echo '{"schemaVersion":1,"label":"codex-status","message":"passing","color":"brightgreen"}' > .github/badges/codex-status.json
-git add .github/badges/codex-status.json
-git commit -m "chore: update Codex status badge to passing"
-git push
+Spins up PostgreSQL
 
-🧾 Documentation Index
+Runs Prisma generate + migrations
 
-Environment Variables Setup Guide
+Executes Vitest tests
 
-Codex CI Integration Guide
+Runs Playwright E2E tests
 
-Branch Protection Policy Guide
+Uploads artifacts on failure
 
-WSL Setup for Codex Rebuild
+CI is read-only with respect to GitHub issues, PRs, and project state.
 
----
+📚 Documentation
 
-# Codex Automation Overview
+Active documentation lives in the docs/ directory.
 
-This repository includes a fully automated workflow that synchronizes Issues, Pull Requests, and ProjectV2 status fields. Codex is able to manage Sprint development and Dashboard enhancements without manual board updates.
+Environment setup
 
-## How It Works
+Validation checklists
 
-### 1. Issues
-- When an issue is created, it is automatically added to the project board.
-- The issue begins in **Todo**.
+Branch protection policies
 
-### 2. Pull Requests
-Codex must reference issues in PR bodies using GitHub’s standard keywords:
-
-Examples:
-- `Fixes #12`
-- `Resolves #14`
-- `Implements #18`
-
-This triggers the automation workflows.
-
-#### PR Opened → In Progress
-All referenced issues are moved from **Todo → In Progress**.
-
-#### PR Merged → Done
-Referenced issues move from **In Progress → Done** when the PR is merged.
-
-#### PR Closed Without Merge → Todo
-If a PR is closed but not merged, all referenced issues move back to **Todo**.
-
-### 3. Commits (Optional)
-If commit messages include issue numbers (e.g., `Ref #12`), issues automatically move to **In Progress** even before a PR is opened.
-
-### 4. Manual Board Reset
-If needed, run:
-./scripts/reset-project-board.sh
-
-
-This moves all issues back to **Todo**.
-
-### 5. Helper Script
-All status updates are handled via:
-
-
-
-./scripts/set-project-status.sh <issue> <todo|inprogress|done>
-
-
-This script talks directly to GitHub’s GraphQL API.
-
----
-
-# Codex Development Workflow (Summary)
-
-1. Codex picks up an Issue from the **Todo** column.  
-2. Codex opens a Pull Request describing the work and listing linked Issues.  
-3. The automation moves the linked Issues to **In Progress**.  
-4. Codex finishes work and merges the PR.  
-5. The automation moves linked Issues to **Done**.  
-6. Codex continues with the next issue automatically.
-
----
-
-This system keeps the project board fully updated with zero manual interaction, even during parallel workstreams such as Sprint 5 completion and Codex Dashboard V2.
-
+Historical and deprecated materials are clearly marked and archived.
 
 👤 Maintainer
 
-Gary G. Bayes, BABA, MBA
+Gary G. Bayes
 Project Owner & Lead Architect
 📧 garybayes@github.io
 
 📜 License
 
 This project is licensed under the MIT License.
-See LICENSE
- for full text.
+See the LICENSE file for details.
+
