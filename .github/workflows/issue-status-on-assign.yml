@@ -5,7 +5,6 @@ name: Issue Assignment Trigger
 on:
   issues:
     types:
-      - assigned
 
 permissions:
   issues: write

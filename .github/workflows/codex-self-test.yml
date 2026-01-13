@@ -4,7 +4,6 @@ name: Codex Self-Test (v7.5)
 # yamllint disable-line rule:truthy
 on:
   schedule:
-    - cron: "0 2 * * *"
   workflow_dispatch:
 
 permissions:

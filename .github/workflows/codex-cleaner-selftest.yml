@@ -4,7 +4,6 @@ name: Codex Self-Test Cleaner (v4)
 # yamllint disable-line rule:truthy
 on:
   schedule:
-    - cron: "30 2 * * *"  # nightly cleanup
   workflow_dispatch:
 
 permissions:

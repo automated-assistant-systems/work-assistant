@@ -4,7 +4,7 @@ name: PR Status - Merged
 # yamllint disable-line rule:truthy
 on:
   pull_request:
-    types: [closed]
+    types:
 
 permissions:
   contents: read

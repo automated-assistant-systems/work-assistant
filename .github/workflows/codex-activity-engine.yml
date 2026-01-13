@@ -4,7 +4,6 @@ name: "Codex Activity Engine (v7.4)"
 # yamllint disable-line rule:truthy
 on:
   schedule:
-    - cron: "0 */2 * * *"
   workflow_dispatch:
 
 permissions:

@@ -4,7 +4,6 @@ name: Codex Diagnostics (v7.7)
 # yamllint disable-line rule:truthy
 on:
   schedule:
-    - cron: "50 */6 * * *"
   workflow_dispatch:
 
 permissions:

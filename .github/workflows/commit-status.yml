@@ -5,8 +5,6 @@ name: Commit Status Update
 on:
   push:
     branches:
-      - main
-      - sprint-*
 
 permissions:
   issues: write

@@ -4,7 +4,6 @@ name: "Codex Project Sync (v9.13)"
 # yamllint disable-line rule:truthy
 on:
   schedule:
-    - cron: "20 */4 * * *"
   workflow_dispatch:
 
 permissions:
