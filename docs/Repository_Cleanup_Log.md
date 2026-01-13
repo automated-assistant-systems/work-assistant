@@ -69,3 +69,9 @@ The repository was cleaned, normalized, and prepared for the upcoming Sprint 5 r
 **Notes for Codex:**
 > This tag (`v4.6.0-cleanup`) should be used as the root reference for validation and file consistency checks during future sprints.  
 > No build artifacts, `.env` files, or local test results are tracked from this point forward.
+
+2026-01-13
+Fully deprecated Codex across code, docs, workflows, labels, issues, and milestones.
+Closed all Codex-era milestones and issues.
+Sprint 4 and Sprint 5 retained as the only active milestones.
+
