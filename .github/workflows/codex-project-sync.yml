@@ -5,7 +5,7 @@ name: "Codex Project Sync (v9.13)"
 on:
   schedule:
     - cron: "20 */4 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
 
 permissions:
   contents: write

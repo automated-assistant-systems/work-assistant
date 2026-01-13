@@ -5,7 +5,7 @@ name: "Codex Activity Engine (v7.4)"
 on:
   schedule:
     - cron: "0 */2 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
 
 permissions:
   contents: write
