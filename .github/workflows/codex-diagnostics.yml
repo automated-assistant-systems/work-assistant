@@ -5,7 +5,7 @@ name: Codex Diagnostics (v7.7)
 on:
   schedule:
     - cron: "50 */6 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
 
 permissions:
   contents: write
