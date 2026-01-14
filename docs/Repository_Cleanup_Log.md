@@ -75,3 +75,6 @@ Fully deprecated Codex across code, docs, workflows, labels, issues, and milesto
 Closed all Codex-era milestones and issues.
 Sprint 4 and Sprint 5 retained as the only active milestones.
 
+2026-01-14
+Deleted deprecated Codex secrets and stale Codex branches including test and telemetry branches.
+
