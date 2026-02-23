@@ -113,6 +113,9 @@ next-env.d.ts
 # Dev Assistant scratch
 .dev-assistant/
 
+# Dev Assistant DOM snapshots (drift telemetry)
+.dev-assistant/dom-snapshots/
+
 # Playwright output
 test-results/
 playwright-report/
