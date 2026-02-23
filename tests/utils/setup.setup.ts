@@ -1,5 +1,7 @@
 import globalSetup from "./globalSetup";
 
-export default async function () {
+async function setup() {
   await globalSetup();
 }
+
+export default setup;
