@@ -1,9 +1,18 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from '@playwright/test';
 
-test("Login page loads", async ({ page }) => {
-  await page.goto("/login");
+// Test for the /login route
 
-  await expect(page.getByRole("heading", { name: "Sign In" })).toBeVisible();
-  await expect(page.getByPlaceholder("Email")).toBeVisible();
-  await expect(page.getByPlaceholder("Password")).toBeVisible();
+test.describe('Login Page', () => {
+  test('should render login page with required fields', async ({ page }) => {
+    await page.goto('/login');
+
+    // Assert the presence of input fields
+    const emailInput = page.getByPlaceholder('Email');
+    const passwordInput = page.getByPlaceholder('Password');
+    const signInButton = page.getByRole('button', { name: 'Sign In' });
+
+    await expect(emailInput).toBeVisible();
+    await expect(passwordInput).toBeVisible();
+    await expect(signInButton).toBeVisible();
+  });
 });

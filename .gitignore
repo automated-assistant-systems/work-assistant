@@ -109,3 +109,13 @@ docs/.cache/
 /mnt/c/Users/*/AppData/Local/Temp/*
 /mnt/c/Users/*/AppData/Roaming/npm-cache/
 next-env.d.ts
+
+# Dev Assistant scratch
+.dev-assistant/
+
+# Playwright output
+test-results/
+playwright-report/
+
+# Playwright auth storage state
+tests/.auth/
